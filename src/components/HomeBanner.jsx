@@ -7,7 +7,7 @@ import BoxReveal from "./magicui/box-reveal";
 
 function HomeBanner() {
   return (
-    <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-background p-10 lg:p-20 ">
+    <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-background p-10 lg:p-10 ">
       {/* Main content */}
       <div className="flex flex-col lg:flex-row">
         <div className="z-10 text-start space-y-5 flex-1">

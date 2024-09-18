@@ -9,6 +9,7 @@ import WhyMightyMustard from "../components/WhyMightyMustard";
 import ProductsList from "@/components/ProductsList";
 import Footer from "@/components/Footer";
 import BrandsWeExport from "@/components/BrandsWeExport";
+import Companies from "@/components/Companies";
 
 function HomePage() {
   return (
@@ -16,10 +17,11 @@ function HomePage() {
       <Navbar />
       <HomeBanner />
       <GlobeComponent />
+      <BrandsWeExport />
+      {/* <Companies /> */}
       <WhoWeAre />
       <WhyMightyMustard />
       {/* <ProductsList /> */}
-      <BrandsWeExport />
       <Footer />
     </>
   );

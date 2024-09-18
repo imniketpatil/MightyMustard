@@ -73,7 +73,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <p className="text-base font-normal leading-7 text-center text-grey-700">
-                  2023 Motion Tailwind CSS Library. All rights reserved.
+                  2024 Mighty Mustard. All Rights Reserved.
                 </p>
               </div>
             </div>
