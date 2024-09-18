@@ -2,7 +2,7 @@ import { FaCheckCircle, FaGlobe, FaTag, FaHeadset } from "react-icons/fa";
 
 function WhyMightyMustard() {
   return (
-    <div className="bg-white dark:bg-gray-900 py-16 px-10 lg:px-20">
+    <div className="bg-white dark:bg-gray-900 py-8 px-10 lg:px-20">
       <div className="text-center mb-12">
         {/* Headline */}
         <h1 className="text-4xl font-bold text-gray-800 dark:text-white">

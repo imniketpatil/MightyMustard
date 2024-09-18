@@ -8,6 +8,7 @@ import WhoWeAre from "../components/WhoWeAre";
 import WhyMightyMustard from "../components/WhyMightyMustard";
 import ProductsList from "@/components/ProductsList";
 import Footer from "@/components/Footer";
+import BrandsWeExport from "@/components/BrandsWeExport";
 
 function HomePage() {
   return (
@@ -18,6 +19,7 @@ function HomePage() {
       <WhoWeAre />
       <WhyMightyMustard />
       {/* <ProductsList /> */}
+      <BrandsWeExport />
       <Footer />
     </>
   );

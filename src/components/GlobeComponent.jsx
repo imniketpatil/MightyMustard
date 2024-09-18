@@ -1,5 +1,6 @@
 import React from "react";
 import { ImportGlobe } from "./ImportGlobe";
+import BlurIn from "./magicui/blur-in";
 
 function GlobeComponent() {
   return (
@@ -8,23 +9,26 @@ function GlobeComponent() {
         <div className="flex flex-col lg:flex-row">
           <div className="z-10 text-start space-y-5 flex-1">
             {/* Main headline */}
-            <h1 className="text-5xl font-bold tracking-tight text-black dark:text-white">
-              Expanding Global Reach with High-Quality Smartphones
-            </h1>
+            <BlurIn
+              word="Expanding Global Reach with High-Quality Smartphones"
+              className="text-5xl font-bold tracking-tight text-black dark:text-white"
+            />
 
             {/* Sub-headline */}
-            <p className="text-lg font-medium text-gray-600 dark:text-gray-300">
-              Proudly exporting India's finest smartphones to countries across
-              the globe, including the US, UK, Australia, Canada, and more.
-            </p>
+            <BlurIn
+              word="Proudly exporting India's finest smartphones to countries across
+              the globe, including the US, UK, Australia, Canada, and more."
+              className="text-lg font-medium text-gray-600 dark:text-gray-300"
+            />
 
             {/* Market details */}
-            <p className="text-lg font-medium text-gray-600 dark:text-gray-300">
-              With a network spanning over 30 countries, we deliver premium
+            <BlurIn
+              word=" With a network spanning over 30 countries, we deliver premium
               devices to regions in Europe, North America, the Middle East, and
               Asia. Our focus on providing the best in mobile technology has
-              made us a trusted supplier worldwide.
-            </p>
+              made us a trusted supplier worldwide."
+              className="text-lg font-medium text-gray-600 dark:text-gray-300"
+            />
 
             {/* Buttons */}
           </div>
