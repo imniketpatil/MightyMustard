@@ -1,6 +1,7 @@
 import React from "react";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { IoMailSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -15,30 +16,30 @@ const Footer = () => {
               </span>
               <div className="flex flex-col items-center gap-6 mb-8">
                 <div className="flex flex-wrap items-center justify-center gap-5 lg:gap-12 gap-y-3 lg:flex-nowrap text-dark-grey-900">
-                  <a
-                    href="javascript:void(0)"
-                    className="text-gray-600 hover:text-gray-900"
-                  >
-                    About
-                  </a>
-                  <a
-                    href="javascript:void(0)"
-                    className="text-gray-600 hover:text-gray-900"
-                  >
-                    Legal Policy
-                  </a>
-                  <a
-                    href="javascript:void(0)"
-                    className="text-gray-600 hover:text-gray-900"
-                  >
-                    Terms and Conditions
-                  </a>
-                  <a
-                    href="javascript:void(0)"
-                    className="text-gray-600 hover:text-gray-900"
-                  >
-                    About
-                  </a>
+                  <Link to="/refund-policy">
+                    <span
+                      href="javascript:void(0)"
+                      className="text-gray-600 hover:text-gray-900"
+                    >
+                      Refund Policy
+                    </span>
+                  </Link>
+                  <Link to="/privacy-policy">
+                    <span
+                      href="javascript:void(0)"
+                      className="text-gray-600 hover:text-gray-900"
+                    >
+                      Privacy Policy
+                    </span>
+                  </Link>
+                  <Link to="/terms-of-use">
+                    <span
+                      href="javascript:void(0)"
+                      className="text-gray-600 hover:text-gray-900"
+                    >
+                      Term Of Use
+                    </span>
+                  </Link>
                 </div>
                 <div className="flex items-center gap-8">
                   <a
@@ -56,7 +57,9 @@ const Footer = () => {
                   >
                     {/* Placeholder for icon */}
                     <div className="text-2xl text-gray-600">
-                      <FaWhatsapp />
+                      <a href="https://wa.me/+918888811132" target="_blank">
+                        <FaWhatsapp />
+                      </a>
                     </div>
                   </a>
                   <a

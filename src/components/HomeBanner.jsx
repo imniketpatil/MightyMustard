@@ -13,7 +13,7 @@ function HomeBanner() {
         <div className="z-10 text-start space-y-5 flex-1">
           {/* Main headline */}
           <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-            <h1 className="text-5xl lg:text-6xl font-extrabold tracking-tight text-black leading-snug">
+            <h1 className="text-3xl lg:text-5xl font-extrabold tracking-tight text-black leading-snug">
               Bringing India’s Best Smartphones to the World
             </h1>
           </BoxReveal>

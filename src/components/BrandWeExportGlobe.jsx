@@ -17,13 +17,12 @@ const slugs = [
   "lenovo",
   "honor",
   "blackberry",
-
   "panasonic",
 ];
 
 export function BrandWeExportGlobe() {
   return (
-    <div className="relative flex h-full w-full max-w-[32rem] items-center justify-center overflow-hidden rounded-lg  bg-background px-20  ">
+    <div className="relative flex h-full w-full max-w-[32rem]  items-center justify-center overflow-hidden rounded-lg  bg-background px-20  ">
       <IconCloud iconSlugs={slugs} />
     </div>
   );
