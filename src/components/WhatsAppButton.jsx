@@ -3,7 +3,7 @@ import WhatsAppPNG from "../assets/WhatsApp/Whatsapp.png";
 
 function WhatsAppButton() {
   return (
-    <a
+    <span
       href="https://wa.me/+918888811132?text=Hey%20Mighty%20Mustard%2C%20I%27m%20looking%20to%20get%20a%20Quotation"
       target="_blank"
       rel="noopener noreferrer"
@@ -14,7 +14,7 @@ function WhatsAppButton() {
         <p className="text-sm font-bold">Drop a Message!</p>
         <p className="text-xs font-semibold">Get Quotation Now!</p>
       </div>
-    </a>
+    </span>
   );
 }
 

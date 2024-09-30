@@ -1,5 +1,4 @@
 import React from "react";
-import BoxReveal from "./magicui/box-reveal";
 import { BrandWeExportGlobe } from "./BrandWeExportGlobe";
 import apple from "../assets/apple.svg";
 import google from "../assets/google.svg";
@@ -51,10 +50,13 @@ export default function BrandsWeExport() {
       {/* Brand Logos Section */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 w-full mt-8">
         <div className="overflow-x-auto w-full py-4 flex gap-x-6 scrollbar-hide">
-          {/* Logos Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8 w-full">
+          {/* Logos Flex Container */}
+          <div className="flex flex-wrap gap-x-6 gap-y-8 w-full">
             {brandLogos.map((brand, index) => (
-              <div key={index} className="flex items-center justify-center">
+              <div
+                key={index}
+                className="flex items-center justify-center flex-[1_1_calc(50%-12px)] sm:flex-[1_1_30%] lg:flex-[1_1_22%]"
+              >
                 <img
                   alt={brand.name}
                   src={brand.image}

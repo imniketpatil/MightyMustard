@@ -1,10 +1,10 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import TermOfUseComponent from "@/components/TermOfUseComponent";
+import TermsAndConditionComponent from "@/components/TermsAndConditionComponent";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import React, { useEffect } from "react";
 
-function TermOfUse() {
+function TermsAndCondition() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -13,7 +13,7 @@ function TermOfUse() {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
-          <TermOfUseComponent />
+          <TermsAndConditionComponent />
         </main>
         <Footer />
       </div>
@@ -22,4 +22,4 @@ function TermOfUse() {
   );
 }
 
-export default TermOfUse;
+export default TermsAndCondition;

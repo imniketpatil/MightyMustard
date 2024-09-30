@@ -1,6 +1,5 @@
 import React from "react";
 import { ImportGlobe } from "./ImportGlobe";
-import BlurIn from "./magicui/blur-in";
 
 function GlobeComponent() {
   return (

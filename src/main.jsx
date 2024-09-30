@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermOfUse from "./pages/TermOfUse";
 import RefundPolicy from "./pages/RefundPolicy";
+import TermsAndCondition from "./pages/TermsAndCondition";
+import Product from "./pages/Product";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
   {
     path: "/refund-policy",
     element: <RefundPolicy />,
+  },
+  {
+    path: "/terms-and-condition",
+    element: <TermsAndCondition />,
+  },
+  {
+    path: "/product",
+    element: <Product />,
   },
 ]);
 

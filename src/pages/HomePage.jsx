@@ -7,6 +7,7 @@ import WhyMightyMustard from "../components/WhyMightyMustard";
 import Footer from "@/components/Footer";
 import BrandsWeExport from "@/components/BrandsWeExport";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ProductHomePageComponent from "@/components/ProductHomePageComponent";
 
 function HomePage() {
   useEffect(() => {
@@ -19,8 +20,10 @@ function HomePage() {
       <GlobeComponent />
       <BrandsWeExport />
       {/* <Companies /> */}
+      <ProductHomePageComponent />
       <WhoWeAre />
       <WhyMightyMustard />
+      {/* <ProductPage /> */}
       {/* <ProductsList /> */}
       <Footer />
       <WhatsAppButton />

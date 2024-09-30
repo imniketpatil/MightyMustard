@@ -12,10 +12,21 @@ const Footer = () => {
             <div className="flex flex-col items-center w-full my-10">
               <span className="mb-8">
                 {/* Placeholder for SVG */}
-                <div className="text-6xl text-purple-600">Mighty Mustard</div>
+                <div className="text-6xl text-center text-purple-600">
+                  Mighty Mustard
+                </div>
               </span>
               <div className="flex flex-col items-center gap-6 mb-8">
                 <div className="flex flex-wrap items-center justify-center gap-5 lg:gap-12 gap-y-3 lg:flex-nowrap text-dark-grey-900">
+                  <Link to="/terms-and-condition">
+                    <span
+                      href="javascript:void(0)"
+                      className="text-gray-600 hover:text-gray-900"
+                    >
+                      Terms And Condition
+                    </span>
+                  </Link>
+
                   <Link to="/refund-policy">
                     <span
                       href="javascript:void(0)"
@@ -42,7 +53,7 @@ const Footer = () => {
                   </Link>
                 </div>
                 <div className="flex items-center gap-8">
-                  <a
+                  <span
                     href="javascript:void(0)"
                     className="text-grey-700 hover:text-grey-900"
                   >
@@ -50,19 +61,19 @@ const Footer = () => {
                     <div className="text-2xl text-gray-600">
                       <FaInstagram />
                     </div>
-                  </a>
-                  <a
+                  </span>
+                  <span
                     href="javascript:void(0)"
                     className="text-grey-700 hover:text-grey-900"
                   >
                     {/* Placeholder for icon */}
                     <div className="text-2xl text-gray-600">
-                      <a href="https://wa.me/+918888811132" target="_blank">
+                      <span href="https://wa.me/++918484091132" target="_blank">
                         <FaWhatsapp />
-                      </a>
+                      </span>
                     </div>
-                  </a>
-                  <a
+                  </span>
+                  <span
                     href="javascript:void(0)"
                     className="text-grey-700 hover:text-grey-900"
                   >
@@ -70,7 +81,7 @@ const Footer = () => {
                     <div className="text-2xl text-gray-600">
                       <IoMailSharp />
                     </div>
-                  </a>
+                  </span>
                   {/* Repeat the above block for additional icons */}
                 </div>
               </div>
