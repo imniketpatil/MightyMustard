@@ -1,16 +1,33 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { iPhones } from "../db/iphones.js";
 import EnquireForm from "./EnquireForm.jsx";
 
 const ProductPage = () => {
-  // Directly fetch the model from localStorage
+  // State to track the current model
   const model = localStorage.getItem("product");
+  console.log(model);
 
-  // Find the iPhone data based on the model
-  const data = iPhones.find((iPhone) => iPhone.model === model);
+  // State to store the iPhone data based on the model
+  const [data, setData] = useState(() =>
+    iPhones.find((iPhone) => iPhone.model === model)
+  );
 
-  // Render the UI
+  // State for the selected color
+
+  // Effect to update data when the model changes
+  useEffect(() => {
+    if (model) {
+      const newData = iPhones.find((iPhone) => iPhone.model === model);
+      setData(newData);
+    }
+  }, [model]);
+
+  // Handle the case when data is not found
+  if (!data) {
+    return <div className="text-center text-lg">Product not found.</div>;
+  }
+
   return (
     <div className="bg-white">
       <div className="pt-6">
@@ -18,7 +35,7 @@ const ProductPage = () => {
         <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           <div className="aspect-h-4 aspect-w-3 hidden overflow-hidden rounded-lg lg:block ">
             <img
-              alt={data.image1}
+              alt={data.image1 || "iPhone image 1"}
               src={data.image1}
               className="max-h-96 w-full object-contain object-center"
             />
@@ -26,7 +43,7 @@ const ProductPage = () => {
 
           <div className="aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
             <img
-              alt={data.image2}
+              alt={data.image2 || "iPhone image 2"}
               src={data.image2}
               className="max-h-96 w-full object-contain object-center"
             />
@@ -56,7 +73,6 @@ const ProductPage = () => {
                       <RadioGroup.Option
                         key={color}
                         value={color}
-                        aria-label={color}
                         className="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none"
                       >
                         {({ checked }) => (
@@ -66,7 +82,7 @@ const ProductPage = () => {
                               className={`h-8 w-8 rounded-full border border-black border-opacity-10 ${
                                 checked ? `ring-2 ring-offset-1` : ""
                               }`}
-                              style={{ backgroundColor: color.toLowerCase() }} // Set the background color to match the selected color
+                              style={{ backgroundColor: color.toLowerCase() }}
                             />
                           </>
                         )}
@@ -75,13 +91,9 @@ const ProductPage = () => {
                   </RadioGroup>
                 </fieldset>
               </div>
-              <h2 className="sr-only">Product information</h2>
 
               <div className="mt-10">
-                {/* Colors */}
-                <div>
-                  <EnquireForm />
-                </div>
+                <EnquireForm />
               </div>
             </div>
           </div>
@@ -90,7 +102,6 @@ const ProductPage = () => {
             {/* Description and details */}
             <div>
               <h3 className="sr-only">Description</h3>
-
               <div className="space-y-6">
                 {/* <p className="text-base text-gray-900">{data.description}</p> */}
               </div>
@@ -98,7 +109,6 @@ const ProductPage = () => {
 
             <div className="mt-10">
               <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
-
               <div className="mt-4">
                 <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
                   <li className="text-xl tracking-tight text-gray-900">

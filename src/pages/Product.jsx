@@ -3,11 +3,15 @@ import Navbar from "@/components/Navbar";
 import ProductPage from "../components/ProductPage";
 import React, { useEffect } from "react";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import FAQ from "@/components/FAQ";
 
 function Product() {
+  const model = localStorage.getItem("product");
+  console.log(model);
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [model]);
   return (
     <>
       {" "}
@@ -15,6 +19,7 @@ function Product() {
         <Navbar />
         <main className="flex-grow">
           <ProductPage />
+          <FAQ />
         </main>
         <Footer />
       </div>

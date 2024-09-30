@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { iPhones } from "@/db/iphones";
 import Logo from "../assets/Mighty_Mustard.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,11 +17,16 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const redirectToProduct = (product) => {
+    localStorage.setItem("product", product);
+    navigate("/product");
+  };
+
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
       <div className="max-w-screen-xl relative flex flex-wrap items-center justify-between mx-auto p-4">
         <div className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
-          <img src={Logo} alt="" className="h-14" />
+          <img src={Logo} alt="Logo" className="h-14" />
           <Link to="/">
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               Mighty Mustard
@@ -54,24 +61,26 @@ const Navbar = () => {
         <div
           className={`${
             isMenuOpen ? "block z-20 absolute top-10" : "hidden"
-          } w-full md:block md:w-auto `}
+          } w-full md:block md:w-auto`}
           id="navbar-dropdown"
         >
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-              <span
-                href="#"
+              <Link
+                to="/"
                 className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
                 aria-current="page"
               >
                 Home
-              </span>
+              </Link>
             </li>
             <li>
               <button
                 id="dropdownNavbarLink"
                 className="relative flex text-center items-center justify-center w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                 onClick={handleDropdownToggle}
+                aria-expanded={isDropdownOpen}
+                aria-controls="dropdownNavbar"
               >
                 Product
                 <svg
@@ -95,9 +104,12 @@ const Navbar = () => {
                   id="dropdownNavbar"
                   className="z-20 absolute font-normal bg-gray-300 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
                 >
-                  <ul className="py-2  text-sm  text-gray-700 dark:text-gray-400">
+                  <ul className="py-2 text-sm text-gray-700 dark:text-gray-400">
                     {iPhones.map((phone, index) => (
-                      <li key={index}>
+                      <li
+                        key={index}
+                        onClick={() => redirectToProduct(phone.model)}
+                      >
                         <span
                           href="#"
                           className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
@@ -107,35 +119,18 @@ const Navbar = () => {
                       </li>
                     ))}
                   </ul>
-                  <div className="py-1">
-                    <span
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                    >
-                      Smart Watches
-                    </span>
-                  </div>
-
-                  <div className="py-1">
-                    <span
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                    >
-                      Airpods
-                    </span>
-                  </div>
                 </div>
               )}
             </li>
 
-            <li>
-              <span
-                href="#"
+            {/* <li>
+              <Link
+                to="/contact"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Contact
-              </span>
-            </li>
+              </Link>
+            </li> */}
           </ul>
         </div>
       </div>
