@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Radio, RadioGroup } from "@headlessui/react";
 import { iPhones } from "../db/iphones.js";
+import EnquireForm from "./EnquireForm.jsx";
 
 const ProductPage = () => {
   // Directly fetch the model from localStorage
@@ -44,60 +45,45 @@ const ProductPage = () => {
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="sr-only">Product information</h2>
 
-            <form className="mt-10">
+            <div className="mt-10">
               {/* Colors */}
               <div>
                 <h3 className="text-sm font-medium text-gray-900">Color</h3>
 
                 <fieldset aria-label="Choose a color" className="mt-4">
-                  {/* <RadioGroup
-                    value={selectedColor}
-                    onChange={setSelectedColor}
-                    className="flex items-center space-x-3"
-                  >
-                    {product.colors.map((color) => (
-                      <Radio
-                        key={color.name}
+                  <RadioGroup className="flex items-center space-x-3">
+                    {data.colors.map((color) => (
+                      <RadioGroup.Option
+                        key={color}
                         value={color}
-                        aria-label={color.name}
-                        className={classNames(
-                          color.selectedClass,
-                          "relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none data-[checked]:ring-2 data-[focus]:data-[checked]:ring data-[focus]:data-[checked]:ring-offset-1"
-                        )}
+                        aria-label={color}
+                        className="relative -m-0.5 flex cursor-pointer items-center justify-center rounded-full p-0.5 focus:outline-none"
                       >
-                        <span
-                          aria-hidden="true"
-                          className={classNames(
-                            color.class,
-                            "h-8 w-8 rounded-full border border-black border-opacity-10"
-                          )}
-                        />
-                      </Radio>
+                        {({ checked }) => (
+                          <>
+                            <span
+                              aria-hidden="true"
+                              className={`h-8 w-8 rounded-full border border-black border-opacity-10 ${
+                                checked ? `ring-2 ring-offset-1` : ""
+                              }`}
+                              style={{ backgroundColor: color.toLowerCase() }} // Set the background color to match the selected color
+                            />
+                          </>
+                        )}
+                      </RadioGroup.Option>
                     ))}
-                  </RadioGroup> */}
+                  </RadioGroup>
                 </fieldset>
               </div>
+              <h2 className="sr-only">Product information</h2>
 
-              {/* Sizes */}
               <div className="mt-10">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
-                  >
-                    Size guide
-                  </a>
+                {/* Colors */}
+                <div>
+                  <EnquireForm />
                 </div>
               </div>
-
-              <button
-                type="submit"
-                className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-              >
-                Add to bag
-              </button>
-            </form>
+            </div>
           </div>
 
           <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">

@@ -4,8 +4,20 @@ import { cn } from "@/lib/utils";
 import SliderCarousal from "./SliderCarousal";
 
 function HomeBanner() {
+  const handleClick = () => {
+    const message = `Hello Mighty Mustard! I would like to inquire about products. Thank you!`;
+    const encodedMessage = encodeURIComponent(message);
+
+    // Replace 'PHONE_NUMBER' with the actual phone number (including country code)
+    const phoneNumber = "+918484091132"; // e.g., '919876543210' for India
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
-    <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-background p-10 lg:p-10 ">
+    <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-background p-10 lg:p-10">
       {/* Main content */}
       <div className="flex flex-col lg:flex-row">
         <div className="z-10 text-start space-y-5 flex-1">
@@ -25,20 +37,10 @@ function HomeBanner() {
 
           {/* Buttons */}
           <div className="flex gap-4 justify-center items-center">
-            {/* Learn More Button */}
-            <div>
-              <span
-                href="#about-us"
-                className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200"
-              >
-                Learn More
-              </span>
-            </div>
-
             {/* Get a Quote Button */}
             <div>
               <span
-                href="#contact"
+                onClick={handleClick} // Call handleClick function on click
                 className="inline-block px-8 py-3 bg-gray-200 text-gray-800 font-semibold rounded-lg shadow hover:bg-gray-300 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-200"
               >
                 Get a Quote
@@ -47,7 +49,7 @@ function HomeBanner() {
           </div>
         </div>
         <div className="flex-1 flex justify-center items-center z-10">
-          <div className=" mt-8 lg:mt-0 lg:ml-10 w-full max-w-lg">
+          <div className="mt-8 lg:mt-0 lg:ml-10 w-full max-w-lg">
             <SliderCarousal />
           </div>
         </div>
