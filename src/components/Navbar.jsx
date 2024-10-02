@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { iPhones } from "@/db/iphones";
-import Logo from "../assets/Mighty_Mustard.png";
+import Logo from "../assets/Logo.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

@@ -2,6 +2,7 @@ import React from "react";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { IoMailSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import Logo from "../assets/Logo.png";
 
 const Footer = () => {
   return (
@@ -12,8 +13,14 @@ const Footer = () => {
             <div className="flex flex-col items-center w-full my-10">
               <span className="mb-8">
                 {/* Placeholder for SVG */}
-                <div className="text-6xl text-center text-purple-600">
-                  Mighty Mustard
+
+                <div className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
+                  <img src={Logo} alt="Logo" className="h-14" />
+                  <Link to="/">
+                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                      Mighty Mustard
+                    </span>
+                  </Link>
                 </div>
               </span>
               <div className="flex flex-col items-center gap-6 mb-8">
@@ -59,7 +66,12 @@ const Footer = () => {
                   >
                     {/* Placeholder for icon */}
                     <div className="text-2xl text-gray-600">
-                      <FaInstagram />
+                      <a
+                        href="https://www.instagram.com/mightymustardprivatelimited?igsh=MTAxZGQyeXY2Z3dsOA=="
+                        target="_black"
+                      >
+                        <FaInstagram />
+                      </a>
                     </div>
                   </span>
                   <span
@@ -68,9 +80,9 @@ const Footer = () => {
                   >
                     {/* Placeholder for icon */}
                     <div className="text-2xl text-gray-600">
-                      <span href="https://wa.me/++918484091132" target="_blank">
+                      <a href="https://wa.me/+918484091132" target="_blank">
                         <FaWhatsapp />
-                      </span>
+                      </a>
                     </div>
                   </span>
                   <span
