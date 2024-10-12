@@ -76,7 +76,7 @@ const FAQ = () => {
 
             <div className="flex justify-center items-center">
               <div className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 flex bg-slate-200 md:justify-center justify-center items-center px-4 py-3 w-full ">
-                <a
+                {/* <a
                   href="https://wa.me/+918484091132"
                   target="_black"
                   className=" outline-none relative inline-flex items-center justify-center leading-normal no-underline  py-2 pr-4 pl-3  text-slate-700 font-sans font-bold text-sm uppercase hover:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-500 transition group lg:text-lg"
@@ -97,7 +97,7 @@ const FAQ = () => {
                     <line x1="17" y1="7" x2="7" y2="17"></line>
                     <polyline points="8 7 17 7 17 16"></polyline>
                   </svg>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
