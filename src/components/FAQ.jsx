@@ -65,7 +65,7 @@ const FAQ = () => {
           <div className="flex justify-between md:flex-row flex-col">
             <div className="md:mb-0 mb-8 md:text-left text-center">
               <h2 className="font-medium  text-xl leading-5 text-gray-800 lg:mb-2 mb-4">
-                Questions
+                Question
               </h2>
               <p className="font-normal text-sm lg:text-md leading-5 text-gray-600 md:w-full md:ml-0 w-11/12 mx-auto md:font-semibold ">
                 If you don’t find your answer,
